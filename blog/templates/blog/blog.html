@@ -1,0 +1,79 @@
+{% extends 'djangoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+  body:before {
+    background-image: url('{% static "images/bg.jpg"%}');
+  }
+</style>
+
+<section>
+
+  <div id="heading">
+    <h1>Tutoriales</h1>
+  </div>
+  <!-- Highlights -->
+  <section class="main wrapper">
+    <div class="inner">
+      <div class="content">
+        <header class="special">
+          <h2> Categorías </h2>
+        </header>
+        <div class="categories">
+          {% for categoria in categorias %}
+
+          <a href="{% url 'categoria' categoria.id %}" class="category">
+            {{categoria.name}}
+          </a>
+
+          {% endfor %}
+        </div>
+      </div>
+  </section>
+
+  <section class="main wrapper">
+    <div class="inner">
+      <div class="content">
+
+        <header class="special">
+          <h2>
+            Últimas entradas del Blog:
+          </h2>
+
+        </header>
+        <ul class="posts">
+          {% for post in posts %}
+          <li>
+            <a href="{% url 'post' post.id %}" class="post shadow-on-hover">
+              <header>
+                <span class="label">
+                  {% if post.image %}
+                  <img src="{{ post.image.url }}" alt="{{post.name}}" class="post_image">
+
+                  {% endif %}
+                </span>
+                <h3>{{post.title}}</h3>
+              </header>
+              <p>
+                {% for categoria in post.categorias.all%}
+
+
+
+                <span class="badge badge-success">{{categoria.name}}</span>
+                {% endfor %} </p>
+
+              <p> {{post.description}}</p>
+              <small> Creado el {{post.updated}}
+
+              </small>
+            </a></li>
+          {% endfor %}
+        </ul>
+      </div>
+  </section>
+
+
+  {% endblock %}

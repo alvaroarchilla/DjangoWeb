@@ -1,0 +1,78 @@
+{% extends 'djangoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+<div id="heading">
+    <h1>{{post.title}}</h1>
+</div>
+
+
+<section class="main ">
+    <div class="inner">
+        <div class="content">
+
+            <!--     <h2>{{post.title}}</h2>  -->
+            <p>{{post.description}} </p>
+            {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{post.title}}" style="width:100%%;height:100%%;">
+            {% endif %}
+
+
+            <div>{{post.body | safe}} </div>
+
+
+
+
+
+
+
+
+
+            <h2>RELACIONADOS</h2>
+            <ul class="posts">
+
+
+
+
+                {% for relacionado in relacionados %}
+                <li>
+
+                    {% for subcategoria in relacionado.subcategorias.all %}
+                    {% for subcategoria2 in subcategorias %}
+
+                    {{subcategoria2.name}}
+
+                    {% endfor %}
+                       {% endfor %}
+                    <a href="{% url 'post' relacionado.id %}" class="post shadow-on-hover">
+                        <header>
+                            <span class="label">
+                                {% if relacionado.image %}
+                                <img src="{{ relacionado.image.url }}" alt="{{relacionado.name}}" class="post_image">
+                                {% endif %}
+                            </span>
+                            <h3>{{relacionado.title}}</h3>
+                        </header>
+                        <p>
+                            {% for subcategoria in relacionado.subcategorias.all%}
+                            <span class="badge badge-success">{{subcategoria.name}}</span>
+                            {% endfor %} </p>
+                        <p> {{relacionado.description}}</p>
+                        <small> Creado el {{relacionado.created}}
+                        </small>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

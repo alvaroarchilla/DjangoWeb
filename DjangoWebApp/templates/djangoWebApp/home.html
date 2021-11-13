@@ -1,0 +1,147 @@
+		<!-- Main -->
+		{% extends 'djangoWebApp/base.html' %}
+		{% load static %}
+		{% block content %}
+
+
+		<style>
+			#heading {
+				background-image: url("{% static "images/banner.jpg" %}");
+			}
+
+			#cta {
+				background-image: linear-gradient(rgba(17, 17, 17, 0.25), rgba(17, 17, 17, 075)),
+				url('{% static "images/cta01.jpg"%}');
+			}
+
+			body:before {
+
+				background-image: url('{% static "images/bg.jpg"%}');
+			}
+		</style>
+
+
+		<title>Álvaro Archilla - Encuentra tutoriales a tu medida</title>
+
+
+		<body class="is-preload">
+
+			<!-- Banner -->
+			<section id="banner">
+
+				<div class="inner">
+					<h1>Álvaro Archilla</h1>
+					<p>Una web de tutorials sobre electrónica y programación <br />
+						creada por mi para compartir los conocimientos que voy adquiriendo.</p>
+				</div>
+				<video autoplay loop muted playsisnline src="{% static 'images/banner.mp4' %}"></video>
+
+			</section>
+
+			<!-- Highlights -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>¿Qué sección deseas explorar?</h2>
+						<p>Actualmente, la web cuenta con tres secciones pero se está buscando mejorarlo constantemente.</p>
+					</header>
+					<div class="highlights main">
+						<section>
+							<a class="content shadow-on-hover" href="about">
+								<header>
+									<span class="label icon fa-vcard-o"></span>
+									<h3>Sobre mi</h3>
+								</header>
+								<p>En esta sección encontrarás información profesional sobre quién soy .</p>
+							</a>
+						</section>
+						<section>
+							<a class="content shadow-on-hover" href="blog">
+									<header>
+										<span class="label icon fa-file-code-o"></span>
+										<h3>Tutoriales</h3>
+									</header>
+									<p>Si buscas aprender algo nuevo o ayuda con un tema que no tienes claro esta es tu
+										sección.
+									</p>
+							</a>
+						</section>
+						<section>
+							<a class="content shadow-on-hover" href="contact">
+									<header>
+										<span class="icon fa-external-link"></span>
+										<h3>Contacto</h3>
+									</header>
+									<p>Rellena el formulario para contactar sobre posibles trabajos, colaboraciones y
+										proyectos.
+									</p>
+							</a>
+						</section>
+
+			</div>
+			</div>
+			</section>
+
+			<!-- CTA -->
+			<section id="cta" class="wrapper">
+				<div class="inner">
+					<h2>Web en Desarrollo</h2>
+					<p>Esta web se encuentra actualmente en desarrollo y por lo tanto puede que algunas funcionalidades no
+						estén del todo pulidas. Pero no preocupes porque eso es un indicativo de que se están experimentando
+						con diferentes tecnologías para aumentar la biblioteca de contenidos.</p>
+				</div>
+			</section>
+
+			<!-- Testimonials -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>Conoce a nuestros colaboradores</h2>
+						<p>En esta sección los colaboradores habituales escriben una opinión sobre la web en la que colaboran
+							subiendo contenidos periodicamente .</p>
+					</header>
+					<div class="testimonials">
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>De entre todas las web de tutoriales, esta me parece única y especial.</p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="{% static 'images/pic01.jpg' %}" alt="" />
+									</div>
+									<p class="credit">- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span></p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>Nunca pensé que llegaría a acabar esta web basándola en el framework de Django.</p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="{% static 'images/pic03.jpg' %}" alt="" />
+									</div>
+									<p class="credit">- <strong>John Doe</strong> <span>CEO - ABC Inc.</span></p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>Se nota que se ha trabajado con amor en el desarrollo</p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="{% static 'images/pic02.jpg' %}" alt="" />
+									</div>
+									<p class="credit">- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span></p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+			{% endblock%}
+		</body>

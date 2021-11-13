@@ -1,0 +1,51 @@
+{% extends 'djangoWebApp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+        <heading class="special">
+          <h2>
+            Mejoras y Bugs:
+          </h2>
+
+        </header>
+
+<section  class="main wrapper">
+  <div class="inner">
+    <div class=" content">
+
+
+      <ul class="posts">
+        {% for bug in bugs %}
+        <li class="post shadow-on-hover"> 
+          <h3>{{bug.title}}</h3>
+
+          <span class="label">
+            {% if bug.image %}
+            <img src="{{ bug.image.url }}" alt="{{bug.title}}" class="post_image">
+
+            {% endif %}
+          </span>
+
+
+
+
+
+          <p> {{bug.description}}</p>
+          <small> Creado el {{bug.updated}}
+
+          </small>
+        </li>
+
+        {% endfor %}
+      </ul>
+
+
+
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

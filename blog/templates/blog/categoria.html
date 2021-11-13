@@ -1,0 +1,69 @@
+{% extends 'djangoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+<div id="heading">
+  <h1>Categoría: {{categoria.name}}</h1>
+</div>
+
+
+
+<section class="main wrapper">
+  <div class="inner">
+    <div class="content">
+
+      <header class="special">
+        <h2>
+          Todos los tutoriales sobre {{categoria.name}}:
+        </h2>
+
+      </header>
+      <ul class="posts">
+        {% for post in posts %}
+        <li>
+          <a href="{% url 'post' post.id %}" class="post shadow-on-hover">
+            <header>
+              <span class="label">
+                {% if post.image %}
+                <img src="{{ post.image.url }}" alt="{{post.name}}" class="post_image">
+
+                {% endif %}
+              </span>
+              <h3>{{post.title}}</h3>
+            </header>
+
+            <p>
+              {% for categoria in post.categorias.all%}
+
+
+
+              <span class="badge badge-success">{{categoria.name}}</span>
+            {% endfor %} </p>
+
+            <p> {{post.description}}</p>
+                        <small> Creado el {{post.updated}} 
+             
+            </small>
+          </a>
+          
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

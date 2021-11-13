@@ -134,7 +134,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # The URL to use when referring to static files (where they will be served from)
-STATIC_URL = '/DjangoWebProject/static/'
+STATIC_URL = 'DjangoWebProject/static/'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/

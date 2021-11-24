@@ -43,10 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'DjangoWebApp',
     'blog',
     'ckeditor',
+    'cloudinary',
 
 ]
 
@@ -140,7 +142,7 @@ STATIC_URL = 'DjangoWebProject/static/'
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_URL='/media/'
+MEDIA_URL='/DjangoWebProject/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 # Default primary key field type
@@ -153,3 +155,9 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dpc0ldfnt',
+    'API_KEY': '717419696444424',
+    'API_SECRET': 'ekuubNhpYuwY_bmbloHQ3_a_YUI',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

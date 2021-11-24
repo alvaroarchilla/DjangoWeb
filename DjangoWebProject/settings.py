@@ -140,7 +140,7 @@ STATIC_URL = 'DjangoWebProject/static/'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL='/DjangoWebProject/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')

@@ -155,9 +155,9 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dpc0ldfnt',
-    'API_KEY': '717419696444424',
-    'API_SECRET': 'ekuubNhpYuwY_bmbloHQ3_a_YUI',
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+#*CLOUDINARY_STORAGE = {
+#    'CLOUD_NAME': 'dpc0ldfnt',
+ #   'API_KEY': '717419696444424',
+  #  'API_SECRET': 'ekuubNhpYuwY_bmbloHQ3_a_YUI',
+#}
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import clodinary
+import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
+ #   'cloudinary_storage',
     'django.contrib.staticfiles',
     'DjangoWebApp',
     'blog',
@@ -164,7 +164,7 @@ DATABASES['default'].update(db_from_env)
 #}
 # DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-clodinary.config(
+cloudinary.config(
     cloud_name="dpc0ldfnt",
     api_key= "717419696444424",
     api_secret="ekuubNhpYuwY_bmbloHQ3_a_YUI"

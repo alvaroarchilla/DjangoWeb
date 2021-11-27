@@ -15,17 +15,15 @@
 <section class="main ">
     <div class="inner">
         <div class="content">
-
-            <!--     <h2>{{post.title}}</h2>  -->
-            <p>{{post.description}} </p>
-            {% if post.cloudinaryimg %}
-            <img src="{{ post.cloudinaryimg.url }}" alt="{{post.title}}" style="width:600px;height:500px;">
-            {% endif %}
-
-
-            <div>{{post.body | safe}} </div>
+            <div class="wrapper">
+                <!--     <h2>{{post.title}}</h2>  -->
+                <p>{{post.description}} </p>
+                {% if post.cloudinaryimg %}
+                <img src="{{ post.cloudinaryimg.url }}" alt="{{post.title}}" style="width:800px;height:600px;">
+                {% endif %}
 
 
+                <div>{{post.body | safe}} </div>
 
 
 
@@ -33,43 +31,46 @@
 
 
 
-            <h2>RELACIONADOS</h2>
-            <ul class="posts">
+
+
+                <h2>RELACIONADOS</h2>
+                <ul class="posts">
 
 
 
 
-                {% for relacionado in relacionados %}
-                <li>
+                    {% for relacionado in relacionados %}
+                    <li>
 
-                    {% for subcategoria in relacionado.subcategorias.all %}
-                    {% for subcategoria2 in subcategorias %}
+                        {% for subcategoria in relacionado.subcategorias.all %}
+                        {% for subcategoria2 in subcategorias %}
 
-                    {{subcategoria2.name}}
+                        {{subcategoria2.name}}
 
+                        {% endfor %}
+                        {% endfor %}
+                        <a href="{% url 'post' relacionado.id %}" class="post shadow-on-hover">
+                            <header>
+                                <span class="label">
+                                    {% if relacionado.cloudinaryimg %}
+                                    <img src="{{ relacionado.cloudinaryimg.url }}" alt="{{relacionado.name}}"
+                                        class="post_image">
+                                    {% endif %}
+                                </span>
+                                <h3>{{relacionado.title}}</h3>
+                            </header>
+                            <p>
+                                {% for subcategoria in relacionado.subcategorias.all%}
+                                <span class="badge badge-success">{{subcategoria.name}}</span>
+                                {% endfor %} </p>
+                            <p> {{relacionado.description}}</p>
+                            <small> Creado el {{relacionado.created}}
+                            </small>
+                        </a>
+                    </li>
                     {% endfor %}
-                       {% endfor %}
-                    <a href="{% url 'post' relacionado.id %}" class="post shadow-on-hover">
-                        <header>
-                            <span class="label">
-                                {% if relacionado.cloudinaryimg %}
-                                <img src="{{ relacionado.cloudinaryimg.url }}" alt="{{relacionado.name}}" class="post_image">
-                                {% endif %}
-                            </span>
-                            <h3>{{relacionado.title}}</h3>
-                        </header>
-                        <p>
-                            {% for subcategoria in relacionado.subcategorias.all%}
-                            <span class="badge badge-success">{{subcategoria.name}}</span>
-                            {% endfor %} </p>
-                        <p> {{relacionado.description}}</p>
-                        <small> Creado el {{relacionado.created}}
-                        </small>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-
+                </ul>
+            </div>
 
         </div>
     </div>

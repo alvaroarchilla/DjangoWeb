@@ -4,9 +4,13 @@
 
 {% block content %}
 
+		<style>
 
+			body:before {
 
-
+				background-image: url('{% static "images/bg.jpg"%}');
+			}
+		</style>
 <div id="heading">
     <h1>{{post.title}}</h1>
 </div>

@@ -50,8 +50,8 @@
             <a href="{% url 'post' post.id %}" class="post shadow-on-hover">
               <header>
                 <span class="label">
-                  {% if post.image %}
-                  <img src="{{ post.image.url }}" alt="{{post.name}}" class="post_image">
+                  {% if post.cloudinaryimg %}
+                  <img src="{{ post.cloudinaryimg.url }}" alt="{{post.name}}" class="post_image">
 
                   {% endif %}
                 </span>

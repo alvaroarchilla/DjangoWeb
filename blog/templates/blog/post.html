@@ -52,8 +52,8 @@
                     <a href="{% url 'post' relacionado.id %}" class="post shadow-on-hover">
                         <header>
                             <span class="label">
-                                {% if relacionado.image %}
-                                <img src="{{ relacionado.image.url }}" alt="{{relacionado.name}}" class="post_image">
+                                {% if relacionado.cloudinaryimg %}
+                                <img src="{{ relacionado.cloudinaryimg.url }}" alt="{{relacionado.name}}" class="post_image">
                                 {% endif %}
                             </span>
                             <h3>{{relacionado.title}}</h3>

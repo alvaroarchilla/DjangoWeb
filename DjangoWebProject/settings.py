@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-
+import clodinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -161,3 +163,9 @@ DATABASES['default'].update(db_from_env)
   #  'API_SECRET': 'ekuubNhpYuwY_bmbloHQ3_a_YUI',
 #}
 # DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+clodinary.config(
+    cloud_name="dpc0ldfnt",
+    api_key= "717419696444424",
+    api_secret="ekuubNhpYuwY_bmbloHQ3_a_YUI"
+)

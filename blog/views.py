@@ -1,6 +1,6 @@
 from django.db.models.fields import related
 from django.shortcuts import render
-from blog.models import Post, Categoria, Subcategoria
+from blog.models import Post, Categoria, Subcategoria, CloudinaryMedia
 
 
 # Create your views here.
@@ -25,3 +25,7 @@ def post(request, post_id):
     subcategorias=post.subcategorias.all()
     relacionados=Post.objects.filter(subcategorias=2)
     return render(request, "blog/post.html", {"post":post, "relacionados":relacionados, "subcategorias":subcategorias})
+
+def galeriaCloudinary(request):
+    cloudinaryfiles=CloudinaryMedia.objects.all()
+    return render(request, "blog/galeria.html", {"cloudinaryfiles":cloudinaryfiles})

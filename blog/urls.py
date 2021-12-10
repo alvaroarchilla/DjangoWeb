@@ -13,6 +13,8 @@ urlpatterns = [
     path('categoria/<int:categoria_id>', views.categoria, name="categoria"), 
     path('subcategoria/<int:subcategoria_id>', views.subcategoria, name="subcategoria"),   
     path('post/<int:post_id>', views.post, name="post"), 
+    path('galeria', views.galeriaCloudinary, name="galeria"),
+    
       
 ]
 

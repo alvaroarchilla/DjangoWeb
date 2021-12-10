@@ -1,0 +1,42 @@
+{% extends 'djangoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="heading">
+  <h1>Galería: Imágenes en el Blog</h1>
+</div>
+
+<section class="main wrapper">
+  <div class="inner">
+    <div class="content">
+
+      <ul class="posts">
+        {% for cloudinaryfile in cloudinaryfiles %}
+
+<div>
+<h4> 
+
+{{cloudinaryfile.name}}
+</h4>
+<img src="{{ cloudinaryfile.cloudinaryfile.url}}" width="300px">
+</div>
+
+
+
+        {% endfor %}
+      </ul>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

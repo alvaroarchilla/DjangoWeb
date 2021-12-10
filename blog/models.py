@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import	RichTextField
 from cloudinary.models import CloudinaryField
+
+
 # Create your models here.
 
 class Categoria(models.Model):
@@ -48,3 +50,17 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
+class CloudinaryMedia(models.Model):
+    name=models.CharField(max_length=50,unique=True)
+    created=models.DateField(auto_now_add=True)
+    updated=models.DateField(auto_now_add=True)
+    #image = CloudinaryJsFileField(attrs = { 'multiple': 1 })
+    relatedpost=models.ManyToManyField(Post)
+    cloudinaryfile= CloudinaryField('image',blank=True)
+
+    class Meta:
+        verbose_name='cloudinaryMedia'
+        verbose_name_plural='cloudinaryMedias'
+    
+    def __str__(self):
+        return self.name

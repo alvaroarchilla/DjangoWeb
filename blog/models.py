@@ -57,7 +57,7 @@ class CloudinaryMedia(models.Model):
     #image = CloudinaryJsFileField(attrs = { 'multiple': 1 })
     relatedpost=models.ManyToManyField(Post)
     cloudinaryfile= CloudinaryField('image/test',blank=True)
-    cloudinaryfiletest= models.ImageField(upload_to='test/',blank=True)
+    cloudinaryfiletest= models.ImageField(upload_to='https://api.cloudinary.com/v1_1/dpc0ldfnt/mh/upload',blank=True)
 
 
     class Meta:

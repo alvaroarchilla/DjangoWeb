@@ -56,7 +56,7 @@ class CloudinaryMedia(models.Model):
     updated=models.DateField(auto_now_add=True)
     #image = CloudinaryJsFileField(attrs = { 'multiple': 1 })
     relatedpost=models.ManyToManyField(Post)
-    cloudinaryfile= CloudinaryField('image',blank=True)
+    cloudinaryfile= CloudinaryField('image/test',blank=True)
     cloudinaryfiletest= models.ImageField(upload_to='test/',blank=True)
 
 

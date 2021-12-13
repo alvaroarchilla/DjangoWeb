@@ -2772,6 +2772,7 @@ ul.icons li .icon:before {
 
 .image.main img {
   width: 100%;
+  display: block;
 }
 
 /* Wrapper */

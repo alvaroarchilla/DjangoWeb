@@ -4440,6 +4440,19 @@ body.is-menu-visible #menu {
   width: 100%;
 }
 
+.post-body p {
+  
+  display: flex;
+  justify-content: center;
+  
+}
+
+.post-body img {
+  
+max-width: 100%;
+  
+}
+
 .shadow-on-hover {
   transition: .1s;
 }

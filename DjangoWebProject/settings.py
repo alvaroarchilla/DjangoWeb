@@ -162,7 +162,7 @@ DATABASES['default'].update(db_from_env)
  #   'API_KEY': '717419696444424',
   #  'API_SECRET': 'ekuubNhpYuwY_bmbloHQ3_a_YUI',
 #}
-# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 cloudinary.config(
     cloud_name="dpc0ldfnt",

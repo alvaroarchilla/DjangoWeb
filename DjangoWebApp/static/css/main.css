@@ -271,7 +271,7 @@ p {
 
 header.special {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
 }
 
 header.special p {
@@ -2777,7 +2777,7 @@ ul.icons li .icon:before {
 
 /* Wrapper */
 .wrapper {
-  padding: 8rem 0 6rem 0;
+  padding: 6rem 0 6rem 0;
   position: relative;
   z-index: 1;
 }

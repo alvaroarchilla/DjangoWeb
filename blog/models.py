@@ -36,7 +36,7 @@ class Post(models.Model):
     description=models.CharField(max_length=255)
     body=RichTextField(blank=True, null=True)
   #  image=models.ImageField(upload_to="blog", null=True, blank=True)
-    cloudinaryimg= CloudinaryField('/image/',blank=True)
+    cloudinaryimg= CloudinaryField('image',blank=True)
     cloudinaryfiletest= models.ImageField(upload_to='test/',blank=True)
     author=models.ForeignKey(User,on_delete=models.CASCADE)
     categorias=models.ManyToManyField(Categoria)

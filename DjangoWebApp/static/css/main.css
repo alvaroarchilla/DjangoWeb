@@ -271,7 +271,8 @@ p {
 
 header.special {
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 header.special p {

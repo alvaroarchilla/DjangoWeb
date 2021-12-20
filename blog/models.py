@@ -57,8 +57,8 @@ class CloudinaryMedia(models.Model):
     updated=models.DateField(auto_now_add=True)
     #image = CloudinaryJsFileField(attrs = { 'multiple': 1 })
     relatedpost=models.ManyToManyField(Post)
-    cloudinaryfile= CloudinaryField('image/test',blank=True)
-    cloudinaryfiletest= models.ImageField(upload_to='https://api.cloudinary.com/v1_1/dpc0ldfnt/mh/upload',blank=True)
+    cloudinaryfiles = models.ManyToManyField('CloudinaryFile',blank=True)
+   # cloudinaryfiletest= models.ImageField(upload_to='https://api.cloudinary.com/v1_1/dpc0ldfnt/mh/upload',blank=True)
 
 
     class Meta:
@@ -67,3 +67,8 @@ class CloudinaryMedia(models.Model):
     
     def __str__(self):
         return self.name
+
+
+
+class CloudinaryFile(models.Model):
+    cloudinaryfile= CloudinaryField('Imagen',blank=True)

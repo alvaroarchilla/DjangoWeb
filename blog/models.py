@@ -72,3 +72,12 @@ class CloudinaryMedia(models.Model):
 
 class CloudinaryFile(models.Model):
     cloudinaryfile= CloudinaryField('Imagen',blank=True)
+    created=models.DateField(auto_now_add=True)
+    updated=models.DateField(auto_now_add=True)
+        
+    class Meta:
+        verbose_name='cloudinaryfile'
+        verbose_name_plural='cloudinaryfiles'
+    
+    def __str__(self):
+        return self.name

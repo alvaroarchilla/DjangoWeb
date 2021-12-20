@@ -53,7 +53,7 @@ class Post(models.Model):
     
 class CloudinaryMedia(models.Model):
     name=models.CharField(max_length=50,unique=True)
-    name2=Post.title
+    name2=models.ManyToManyField(Subcategoria)
     created=models.DateField(auto_now_add=True)
     updated=models.DateField(auto_now_add=True)
     #image = CloudinaryJsFileField(attrs = { 'multiple': 1 })

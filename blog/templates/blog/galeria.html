@@ -13,14 +13,14 @@
     <div class="content">
 
       <ul class="posts">
-        {% for cloudinaryfile in cloudinaryfiles %}
+        {% for cloudinarymedia in cloudinarymedias %}
 
 <div>
 <h4> 
 
-{{cloudinaryfile.name}}
+{{cloudinarymedia.name}}
 </h4>
-<img src="{{ cloudinaryfile.cloudinaryfiles.url}}" width="300px">
+<img src="{{ cloudinarymedia.cloudinaryfiles.url}}" width="300px">
 </div>
 
 

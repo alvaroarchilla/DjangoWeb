@@ -72,7 +72,7 @@ class CloudinaryMedia(models.Model):
 
 
 class CloudinaryFile(models.Model):
-    name=models.CharField(max_length=50,unique=True,blank=True)
+    name=models.CharField(max_length=50,blank=True)
     cloudinaryfile= CloudinaryField('Imagen',blank=True)
     created=models.DateField(auto_now_add=True)
     updated=models.DateField(auto_now_add=True)

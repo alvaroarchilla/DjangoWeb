@@ -4365,7 +4365,7 @@ body.is-menu-visible #menu {
   border-radius: 6px;
 }
 
-.highlights > section {
+.highlights>section {
   flex: 0 0 calc(100% / 3);
 }
 
@@ -4443,18 +4443,18 @@ body.is-menu-visible #menu {
 }
 
 .post-body p {
-  
 
- /* display: flex;*/
 
-  
+  /* display: flex;*/
+
+
 }
 
 .post-body img {
-justify-content: center;
-  
-max-width: 100%;
-  
+  justify-content: center;
+
+  max-width: 100%;
+
 }
 
 .shadow-on-hover {
@@ -4470,10 +4470,11 @@ max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
+  justify-content: center;
 }
 
 .categories .category {
   font-size: 1.5em;
   text-transform: uppercase;
-  justify-content: center;
+
 }

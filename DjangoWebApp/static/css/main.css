@@ -4444,11 +4444,12 @@ body.is-menu-visible #menu {
 .post-body p {
   
   display: flex;
-  justify-content: center;
+
   
 }
 
 .post-body img {
+justify-content: center;
   
 max-width: 100%;
   

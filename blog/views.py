@@ -23,7 +23,7 @@ def subcategoria(request, subcategoria_id):
 def post(request, post_id):
     post=Post.objects.get(id=post_id)
     subcategorias=post.subcategorias.all()
-    relacionados=Post.objects.filter(subcategorias=2)
+    relacionados=Post.objects.distinct(subcategorias)
     return render(request, "blog/post.html", {"post":post, "relacionados":relacionados, "subcategorias":subcategorias})
 
 def galeriaCloudinary(request):

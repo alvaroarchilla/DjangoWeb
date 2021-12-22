@@ -4475,4 +4475,5 @@ max-width: 100%;
 .categories .category {
   font-size: 1.5em;
   text-transform: uppercase;
+  justify-content: center;
 }

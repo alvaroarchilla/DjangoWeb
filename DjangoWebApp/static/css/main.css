@@ -4435,6 +4435,7 @@ body.is-menu-visible #menu {
 .posts .post .badge {
   text-transform: uppercase;
   letter-spacing: .2px;
+  justify-content: center;
 }
 
 .posts .post .post_image {

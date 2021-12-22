@@ -4443,7 +4443,8 @@ body.is-menu-visible #menu {
 
 .post-body p {
   
-  display: flex;
+
+ /* display: flex;*/
 
   
 }

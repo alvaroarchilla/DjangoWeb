@@ -22,7 +22,7 @@ def subcategoria(request, subcategoria_id):
 
 def post(request, post_id):
     post=Post.objects.get(id=post_id)
-    subcategoria=Categoria.objects.get(post_id)
+    subcategoria=Categoria.objects.get(id=post_id)
     relacionados=Post.objects.filter(subcategorias=subcategoria)
     return render(request, "blog/post.html", {"post":post, "relacionados":relacionados, "subcategorias":subcategoria})
 

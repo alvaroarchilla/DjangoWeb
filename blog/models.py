@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import	RichTextField
 from cloudinary.models import CloudinaryField
+from django.db.models import query
 
 
 # Create your models here.
@@ -47,6 +48,9 @@ class Post(models.Model):
     class Meta:
         verbose_name='post'
         verbose_name_plural='posts'
+    def related_post(self):
+
+        return self.categorias
     
     def __str__(self):
         return self.title

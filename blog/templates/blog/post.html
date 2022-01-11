@@ -34,6 +34,30 @@
 
                 <h2>RELACIONADOS</h2>
                 <ul class="posts">
+                    {% for relacionado in subcategoria %}
+                    <li>
+
+
+                        <a href="{% url 'post' relacionado.id %}" class="post shadow-on-hover">
+                            <header>
+                                <span class="label">
+                                    {% if relacionado.cloudinaryimg %}
+                                    <img src="{{ relacionado.cloudinaryimg.url }}" alt="{{relacionado.name}}"
+                                        class="post_image">
+                                    {% endif %}
+                                </span>
+                                <h3>{{relacionado.title}}</h3>
+                            </header>
+                            <p>
+                                {% for subcategoria in relacionado.subcategorias.all%}
+                                <span class="badge badge-success">{{subcategoria.name}}</span>
+                                {% endfor %} </p>
+                            <p> {{relacionado.description}}</p>
+                            <small> Creado el {{relacionado.created}}
+                            </small>
+                        </a>
+                    </li>
+                    {% endfor %}
 
                     {% for relacionado in relacionados %}
                     <li>

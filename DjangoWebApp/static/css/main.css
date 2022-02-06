@@ -4483,15 +4483,15 @@ body.is-menu-visible #menu {
 
 .content.categories-content {
   display: flex;
-  padding: 5em;
-  gap: 3rem;
+  padding: 3em;
+  gap: 1.5rem;
 
 }
 
 @media screen and (max-width: 980px) {
   .content.categories-content {
     flex-direction: column-reverse;
-    padding: 2rem;
+    padding: 1.5rem;
 
   }
 }
@@ -4555,10 +4555,17 @@ body.is-menu-visible #menu {
   padding-right: 60px;
 }
 .timeline-legend{
-  padding: 0%;
+  padding: 3rem;
   display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
+    gap: 1rem;
+
+    justify-content: center;
+}
+.timeline-legend p{
+    margin: 0 0 0 0;
+
 }
 
 @media only screen and (max-width: 575px) {
@@ -4630,6 +4637,7 @@ body.is-menu-visible #menu {
   max-width: 30px;
   border-radius: 50%;
   margin-right: 15px;
+  vertical-align: baseline;
 }
 
 .single-timeline-area .single-timeline-content .timeline-icon i {
@@ -4640,6 +4648,7 @@ body.is-menu-visible #menu {
 .single-timeline-area .single-timeline-content .timeline-text h6 {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
+  vertical-align: baseline;
 }
 
 .single-timeline-area .single-timeline-content .timeline-text p {

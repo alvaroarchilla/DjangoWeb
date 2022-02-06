@@ -20,53 +20,58 @@
 
   <section class="main wrapper">
     <div class="inner">
-      <div class="content">
-        <header class="special">
-          <h2> Categorías </h2>
-        </header>
-        <div class="categories">
-          {% for categoria in categorias %}
+      <div class="content categories-content">
+        <div class="categories-posts">
+          <header class="special">
+            <h2>
+              Últimas entradas del Blog:
+            </h2>
 
-          <a href="{% url 'categoria' categoria.id %}" class="category">
-            {{categoria.name}}
-          </a>
+          </header>
+          <ul class="posts">
+            {% for post in posts %}
+            <li>
+              <a href="{% url 'post' post.id %}" class="post shadow-on-hover">
+                <header>
+                  <span class="label">
+                    {% if post.cloudinaryimg %}
+                    <img src="{{ post.cloudinaryimg.url }}" alt="{{post.name}}" class="post_image">
 
-          {% endfor %}
+                    {% endif %}
+                  </span>
+                  <h3>{{post.title}}</h3>
+                </header>
+                <p>
+                  {% for categoria in post.categorias.all%}
+
+
+
+                  <span class="badge badge-success">{{categoria.name}}</span>
+                  {% endfor %} </p>
+
+                <p> {{post.description}}</p>
+                <small> Creado el {{post.updated}}
+
+                </small>
+              </a></li>
+            {% endfor %}
+          </ul>
         </div>
-        <header class="special">
-          <h2>
-            Últimas entradas del Blog:
-          </h2>
+        <div class="categories-menu">
+          <header class="special">
+            <h2> Categorías </h2>
+          </header>
+          <div class="categories ">
+            {% for categoria in categorias %}
 
-        </header>
-        <ul class="posts">
-          {% for post in posts %}
-          <li>
-            <a href="{% url 'post' post.id %}" class="post shadow-on-hover">
-              <header>
-                <span class="label">
-                  {% if post.cloudinaryimg %}
-                  <img src="{{ post.cloudinaryimg.url }}" alt="{{post.name}}" class="post_image">
+            <a href="{% url 'categoria' categoria.id %}" class="category shadow-on-hover">
+              {{categoria.name}}
+            </a>
 
-                  {% endif %}
-                </span>
-                <h3>{{post.title}}</h3>
-              </header>
-              <p>
-                {% for categoria in post.categorias.all%}
-
-
-
-                <span class="badge badge-success">{{categoria.name}}</span>
-                {% endfor %} </p>
-
-              <p> {{post.description}}</p>
-              <small> Creado el {{post.updated}}
-
-              </small>
-            </a></li>
-          {% endfor %}
-        </ul>
+            {% endfor %}
+          </div>
+        </div>
+     
       </div>
     </div>
   </section>

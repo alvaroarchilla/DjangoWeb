@@ -19,6 +19,14 @@
 	<meta name="keywords" content="" />
 	<link type="text/css" rel="stylesheet" href='{% static "css/main.css" %}' />
 
+	<style>
+
+		body:before {
+
+			background-image: url('{% static "images/bg.jpg"%}');
+		}
+	</style>
+
 	<!-- Header -->
 	<header id="header">
 		<a class="logo" href="/">Álvaro Archilla</a>
@@ -39,6 +47,7 @@
 		<li><a href="/bugs">Bugs</a></li>
 	</ul>
 </nav>
+
 
 
 {% block content %}

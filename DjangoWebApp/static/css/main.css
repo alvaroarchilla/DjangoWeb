@@ -4461,7 +4461,7 @@ body.is-menu-visible #menu {
 
 .post-body {
   max-width: 50rem;
-
+  padding: 1rem;
 
 
 }
@@ -4566,9 +4566,15 @@ body.is-menu-visible #menu {
 
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 800px) {
   .single-timeline-area {
-    padding-left: 100px;
+    padding-left: 75px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .single-timeline-area {
+    padding-left: 75px;
   }
 }
 

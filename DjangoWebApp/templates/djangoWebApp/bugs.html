@@ -16,6 +16,7 @@
 
 
       <ul class="posts">
+        {% if bug in bugs %}
         {% for bug in bugs %}
         <li class="post shadow-on-hover"> 
           <h3>{{bug.title}}</h3>
@@ -38,6 +39,7 @@
         </li>
 
         {% endfor %}
+        {% endif %}
       </ul>
 
 

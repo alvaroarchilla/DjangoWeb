@@ -17,13 +17,13 @@ def categoria(request, categoria_id):
 
 def subcategoria(request, subcategoria_id):
     subcategoria=Subcategoria.objects.get(id=subcategoria_id)
-    posts=Post.objects.filter(subcategorias=2)
+    posts=Post.objects.filter(subcategorias=subcategoria_id)
     return render(request, "blog/subcategoria.html", {"subcategoria":subcategoria,"posts":posts})
 
 def post(request, post_id):
     post=Post.objects.get(id=post_id)
     subcategoria=Post.related_post(post)
-    relacionados=Post.objects.filter(subcategorias=2)
+    relacionados=Post.objects.filter(subcategorias=post.subcategoriaprincial)
     return render(request, "blog/post.html", {"post":post, "relacionados":relacionados, "subcategorias":subcategoria})
 
 def galeriaCloudinary(request):

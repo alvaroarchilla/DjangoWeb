@@ -42,6 +42,7 @@ class Post(models.Model):
     author=models.ForeignKey(User,on_delete=models.CASCADE)
     categorias=models.ManyToManyField(Categoria)
     subcategorias=models.ManyToManyField(Subcategoria)
+    subcategoriaprincial= models.ForeignKey(Subcategoria,on_delete=models.CASCADE, null=True, related_name="Subcategoria")
     created=models.DateField(auto_now_add=True)
     updated=models.DateField(auto_now_add=True)
 

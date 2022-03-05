@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-
+{% if posts %}
 <div id="heading">
   <h1>Subcategoría: {{subcategoria.name}}</h1>
 </div>
@@ -41,7 +41,7 @@
       </ul>
     </div>
 </section>
-
+{% endif %}
 
 
 

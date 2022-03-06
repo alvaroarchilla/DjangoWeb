@@ -271,8 +271,8 @@ p {
 
 header.special {
   text-align: center;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
 }
 
 header.special p {
@@ -1547,11 +1547,11 @@ ul.actions.fit.stacked {
 
 .row {
   margin-top: 0;
-  margin-left: -3rem;
+  margin-left: -2rem;
 }
 
 .row>* {
-  padding: 0 0 0 3rem;
+  padding: 0 0 0 2rem;
 }
 
 .row.gtr-uniform {
@@ -3497,7 +3497,7 @@ body.is-preload #banner:before {
 #footer input[type="button"]:hover:active,
 #footer button:hover:active,
 #footer .button:hover:active {
-  background-color: rgba(27, 206, 108, 0.25);
+  background-color: rgba(28, 204, 107, 0.25);
 }
 
 #footer input[type="submit"].primary,
@@ -4460,7 +4460,7 @@ body.is-menu-visible #menu {
 }
 
 .post-body {
-  max-width: 50rem;
+  max-width: 65rem;
   padding: 1rem;
 
 
@@ -4490,14 +4490,70 @@ body.is-menu-visible #menu {
   color: inherit;
 }
 
-.categories {}
+.categories {
+  display: inline-table;
+  padding-left: 1em;
+  text-decoration: none;
+}
 
 .categories .category {
   font-size: 1.5em;
   text-transform: capitalize;
-  display: block;
+  display: flex;
   color: #18b74d;
   text-align: right;
+  }
+
+   .category.category-button {
+    outline: none;
+    border: none;
+    padding: 0px 10px 0px 10px ;
+    display: block;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: transparent;
+    position: relative;
+    border: 2px solid #fff;
+    transition: all 0.5s ease;
+    text-decoration-line: none;
+    
+  }
+  
+
+
+
+  .four {
+    overflow: hidden;
+    text-decoration-line: none !important;
+  }
+  .four span {
+    color: #18b74d;
+    display: block;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+  }
+  .four .icon {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    color: #fff;
+    padding: 0px 10px 0px 10px ;
+    background-color: #1ccb6c;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+  }
+  .four:hover .icon {
+    left: 0px;
+  }
+  .four:hover span {
+    color: #1ccb6c;
+    margin-left: 35px;
   }
 
 .content.categories-content {

@@ -63,15 +63,24 @@
           </header>
           <div class="categories ">
             {% for categoria in categorias %}
-
-            <a href="{% url 'categoria' categoria.id %}" class="category shadow-on-hover">
+            <!--
+            <a href="{% url 'categoria' categoria.id %}" class="category category-button four shadow-on-hover">
               {{categoria.name}}
             </a>
-
+          -->
+            <div class='categories'>
+                <a href="{% url 'categoria' categoria.id %}"><button class='category category-button four' >
+                <div class='icon'>&#x27A4;</div>
+                <span>
+                 
+                    {{categoria.name}}
+                  </span>
+              </button></a>
+            </div>
             {% endfor %}
           </div>
         </div>
-     
+
       </div>
     </div>
   </section>

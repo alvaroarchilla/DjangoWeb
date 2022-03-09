@@ -4775,7 +4775,7 @@ transition: 0.2s;
 
 .owl-carousel{
 position: relative;
-
+padding: 1rem;
 }
 .owl-carousel .owl-nav {
   position: absolute;

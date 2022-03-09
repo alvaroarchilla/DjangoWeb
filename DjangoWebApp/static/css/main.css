@@ -4773,3 +4773,33 @@ transition: 0.2s;
   color: #095c17;
 }
 
+.owl-carousel{
+position: relative;
+
+}
+.owl-carousel .owl-nav {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  pointer-events: none;
+  }
+
+  .owl-carousel .owl-nav button {
+height: 6rem;
+width: 2rem;
+background:white !important;
+pointer-events: initial;
+opacity: 1;
+
+    }
+    .owl-carousel .owl-nav button span {
+
+      font-size: 2rem;
+          }
+
+.owl-carousel .owl-nav button:focus {
+outline: none;
+    }

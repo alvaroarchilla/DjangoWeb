@@ -21,3 +21,6 @@ class Bug(models.Model):
     def __str__(self):
         return self.title
 
+class TestModel(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='images/', blank=True)

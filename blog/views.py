@@ -29,3 +29,4 @@ def post(request, post_id):
 def galeriaCloudinary(request):
     cloudinarymedias=CloudinaryMedia.objects.all()
     return render(request, "blog/galeria.html", {"cloudinarymedias":cloudinarymedias})
+

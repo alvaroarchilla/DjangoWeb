@@ -2797,11 +2797,11 @@ ul.icons li .icon:before {
 
 @media screen and (max-width: 736px) {
 
-  .highlights.main{
+  .highlights.main {
 
     flex-direction: column;
-    
-   
+
+
   }
 
 }
@@ -4502,59 +4502,63 @@ body.is-menu-visible #menu {
   display: flex;
   color: #18b74d;
   text-align: right;
-  }
+}
 
-   .category.category-button {
-    outline: none;
-    border: none;
-    padding: 0px 10px 0px 10px ;
-    display: block;
-    cursor: pointer;
-    font-size: 20px;
-    background-color: transparent;
-    position: relative;
-    border: 2px solid #fff;
-    transition: all 0.5s ease;
-    text-decoration-line: none;
-    
-  }
-  
+.category.category-button {
+  outline: none;
+  border: none;
+  padding: 0px 10px 0px 10px;
+  display: block;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: transparent;
+  position: relative;
+  border: 2px solid #fff;
+  transition: all 0.5s ease;
+  text-decoration-line: none;
 
+}
 
 
-  .four {
-    overflow: hidden;
-    text-decoration-line: none !important;
-  }
-  .four span {
-    color: #18b74d;
-    display: block;
-    transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-  }
-  .four .icon {
-    position: absolute;
-    left: -60px;
-    top: 0;
-    color: #fff;
-    padding: 0px 10px 0px 10px ;
-    background-color: #1ccb6c;
-    transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-  }
-  .four:hover .icon {
-    left: 0px;
-  }
-  .four:hover span {
-    color: #1ccb6c;
-    margin-left: 35px;
-  }
+
+
+.four {
+  overflow: hidden;
+  text-decoration-line: none !important;
+}
+
+.four span {
+  color: #18b74d;
+  display: block;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+
+.four .icon {
+  position: absolute;
+  left: -60px;
+  top: 0;
+  color: #fff;
+  padding: 0px 10px 0px 10px;
+  background-color: #1ccb6c;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+
+.four:hover .icon {
+  left: 0px;
+}
+
+.four:hover span {
+  color: #1ccb6c;
+  margin-left: 35px;
+}
 
 .content.categories-content {
   display: flex;
@@ -4590,16 +4594,18 @@ body.is-menu-visible #menu {
   .categories-menu .special {
     text-align: center;
     margin: 0.5rem 0 1.5rem 0;
-  
+
   }
+
   .categories-menu {
-   width: auto;
-  
+    width: auto;
+
   }
+
   .categories .category {
 
     text-align: center;
-    }
+  }
 }
 
 
@@ -4614,9 +4620,9 @@ body.is-menu-visible #menu {
   padding-left: 180px;
 }
 
-.single-timeline-area .row > * {
+.single-timeline-area .row>* {
 
-/*padding-bottom: 1.5rem;*/
+  /*padding-bottom: 1.5rem;*/
 
 
 
@@ -4653,17 +4659,19 @@ body.is-menu-visible #menu {
   justify-content: flex-end;
   padding-right: 60px;
 }
-.timeline-legend{
+
+.timeline-legend {
   padding: 3rem;
   display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    gap: 1rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  gap: 1rem;
 
-    justify-content: center;
+  justify-content: center;
 }
-.timeline-legend p{
-    margin: 0 0 0 0;
+
+.timeline-legend p {
+  margin: 0 0 0 0;
 
 }
 
@@ -4712,8 +4720,8 @@ body.is-menu-visible #menu {
   border-radius: 6px;
   margin-bottom: 15px;
   margin-top: 15px;
-  
-transition: 0.2s;
+
+  transition: 0.2s;
   border: 1px solid #ebebeb;
   height: calc(100% - 30px);
   box-sizing: border-box;
@@ -4773,33 +4781,35 @@ transition: 0.2s;
   color: #095c17;
 }
 
-.owl-carousel{
-position: relative;
-padding: 1rem;
+.owl-carousel {
+  position: relative;
+  padding: 1rem;
 }
+
 .owl-carousel .owl-nav {
   position: absolute;
-  top:50%;
-  transform: translateY(-50%);
+  top: 50%;
+  transform: translate(-1rem, -50%);
   display: flex;
   justify-content: space-between;
   width: 100%;
   pointer-events: none;
-  }
+}
 
-  .owl-carousel .owl-nav button {
-height: 6rem;
-width: 2rem;
-background:white !important;
-pointer-events: initial;
-opacity: 1;
+.owl-carousel .owl-nav button {
+  height: 6rem;
+  width: 2rem;
+  background: white !important;
+  pointer-events: initial;
+  opacity: 1;
 
-    }
-    .owl-carousel .owl-nav button span {
+}
 
-      font-size: 2rem;
-          }
+.owl-carousel .owl-nav button span {
+
+  font-size: 2rem;
+}
 
 .owl-carousel .owl-nav button:focus {
-outline: none;
-    }
+  outline: none;
+}

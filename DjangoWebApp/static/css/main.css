@@ -4516,7 +4516,7 @@ body.is-menu-visible #menu {
   border: 2px solid #fff;
   transition: all 0.5s ease;
   text-decoration-line: none;
-
+  box-shadow: none;
 }
 
 

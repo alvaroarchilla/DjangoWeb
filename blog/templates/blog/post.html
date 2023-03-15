@@ -4,13 +4,12 @@
 
 {% block content %}
 
-		<style>
+<style>
+    body:before {
 
-			body:before {
-
-				background-image: url('{% static "images/bg.jpg"%}');
-			}
-		</style>
+        background-image: url('{% static "images/bg.jpg"%}');
+    }
+</style>
 <div id="heading">
     <h1>{{post.title}}</h1>
 </div>
@@ -19,22 +18,51 @@
 <section class="main ">
     <div class="inner">
         <div class="content">
-            <div class="wrapper post-body" >
-                <!--     <h2>{{post.title}}</h2>  -->
-                {% if post.cloudinaryimg %}
-               <!-- <img src="{{ post.cloudinaryimg.url }}" alt="{{post.title}}" style="width:800px;height:600px;">-->
+            <div class="wrapper post-body">
+                {% for postSection in postSections %}
+                {% if postSection.sectionTitle %}
+                <h2>{{postSection.sectionTitle}}</h2>
+                {% endif %}
+                <div> {{postSection.body1 | safe}}</div>
+                {% if postSection.cloudinaryimg1 %}
+                <img src="{{ postSection.cloudinaryimg1.url }}" alt="{{postSection.title}}"
+                    style="width:800px;height:600px;">
+                {% endif %}
+                {% if postSection.body2 %}
+                <div> {{postSection.body2 | safe}}</div>
                 {% endif %}
 
+                {% if postSection.cloudinaryimg2 %}
+                <img src="{{ postSection.cloudinaryimg2.url }}" alt="{{postSection.title}}"
+                    style="width:800px;height:600px;">
+                {% endif %}
+                {% if postSection.body3 %}
+                <div> {{postSection.body3 | safe}}</div>
+                {% endif %}
 
-                <div>{{post.body | safe}} </div>
-
-
-
-
+                {% if postSection.cloudinaryimg3 %}
+                <img src="{{ postSection.cloudinaryimg3.url }}" alt="{{postSection.title}}"
+                    style="width:800px;height:600px;">
+                {% endif %}
+                {% if postSection.body4 %}
+                <div> {{postSection.body4 | safe}}</div>
+                {% endif %}
+                {% if postSection.cloudinaryimg4 %}
+                <img src="{{ postSection.cloudinaryimg4.url }}" alt="{{postSection.title}}"
+                    style="width:800px;height:600px;">
+                {% endif %}
+                {% if postSection.body5 %}
+                <div> {{postSection.body5 | safe}}</div>
+                {% endif %}
+                {% if postSection.cloudinaryimg5 %}
+                <img src="{{ postSection.cloudinaryimg5.url }}" alt="{{postSection.title}}"
+                    style="width:800px;height:600px;">
+                {% endif %}
+                {% endfor %}
 
             </div>
 
-            
+
             <h2>RELACIONADOS</h2>
             <ul class="posts owl-carousel">
 
@@ -67,26 +95,28 @@
         </div>
     </div>
 </section>
-<script type="text/javascript"> $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
-        loop:true,
-        margin:10,
-        responsiveClass:true,
-        responsive:{
-            0:{
-                items:1,
-                nav:true
-            },
-            600:{
-                items:2,
-                nav:false
-            },
-            1000:{
-                items:3,
-                nav:true,
-                loop:false
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 2,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
+                    nav: true,
+                    loop: false
+                }
             }
-        }
+        });
     });
-  }); </script>
+</script>
 {% endblock %}

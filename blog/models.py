@@ -1,8 +1,11 @@
+from turtle import title
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import	RichTextField
 from cloudinary.models import CloudinaryField
 from django.db.models import query
+
+#from blog.admin import PostSectionAdmin
 
 
 # Create your models here.
@@ -31,18 +34,59 @@ class Subcategoria(models.Model):
     
     def __str__(self):
         return self.name
+
+class CloudinaryFile(models.Model):
+    name=models.CharField(auto_created=True, max_length=50,unique=True)
+    cloudinaryfile= CloudinaryField('Imagen',blank=True)
+    created=models.DateField(auto_now_add=True)
+    updated=models.DateField(auto_now_add=True)
+        
+    class Meta:
+        verbose_name='cloudinaryfile'
+        verbose_name_plural='cloudinaryfiles'
     
+    def __str__(self):
+        return self.name
+    
+class DeviceCategory(models.Model):
+    deviceCategoryName=models.CharField(auto_created=True, max_length=50,unique=True)
+    created=models.DateField(auto_now_add=True)
+    updated=models.DateField(auto_now_add=True)
+        
+    class Meta:
+        verbose_name='DeviceCategory'
+        verbose_name_plural='DeviceCategories'
+    
+    def __str__(self):
+        return self.deviceCategoryName
+        
+class ElectronicComponent(models.Model):
+    deviceName=models.CharField(max_length=50,unique=True)
+    deviceType=models.CharField(max_length=50,  choices=[('Sensores', 'Sensores'), ('Actuadores', 'Actuadores'), ('Componentes', 'Componentes'), ('Microcontroladores', 'Microcontroladores')])
+    deviceDescription=models.CharField(max_length=500,blank=True, null=True)
+    deviceCategories=models.ManyToManyField(DeviceCategory)
+    workingVoltage=models.FloatField(blank=True, null=True)
+    workingCurrent=models.FloatField(blank=True, null=True)
+    cloudinaryimg= CloudinaryField('image',blank=True)
+    created=models.DateField(auto_now_add=True)
+    updated=models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name='ElectronicComponent'
+        verbose_name_plural='ElectronicComponents'
+        
+    def __str__(self):
+        return self.deviceName
+
 class Post(models.Model):
     title=models.CharField(max_length=50)
     description=models.CharField(max_length=255)
-    body=RichTextField(blank=True, null=True)
-  #  image=models.ImageField(upload_to="blog", null=True, blank=True)
     cloudinaryimg= CloudinaryField('image',blank=True)
-    cloudinaryfiletest= models.ImageField(upload_to='test/',blank=True)
     author=models.ForeignKey(User,on_delete=models.CASCADE)
     categorias=models.ManyToManyField(Categoria)
     subcategorias=models.ManyToManyField(Subcategoria)
-    subcategoriaprincial= models.ForeignKey(Subcategoria,on_delete=models.CASCADE, null=True, related_name="Subcategoria")
+    subcategoriaprincial= models.ForeignKey(Subcategoria,on_delete=models.DO_NOTHING,  null=True,  related_name="Subcategoria")
+    electronic_components=models.ManyToManyField(ElectronicComponent,blank=True)
     created=models.DateField(auto_now_add=True)
     updated=models.DateField(auto_now_add=True)
 
@@ -55,9 +99,35 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title
+       
+
+class PostSection(models.Model):
+    relatedPost=models.ForeignKey(Post,  null=True, on_delete=models.CASCADE)
+    sectionTitle=models.CharField(max_length=50, blank=True, null=True)
+    title=models.CharField(max_length=50)
+    body1=RichTextField(blank=True, null=True)
+    cloudinaryimg1= CloudinaryField('image',blank=True)
+    body2=RichTextField(blank=True, null=True)
+    cloudinaryimg2= CloudinaryField('image',blank=True)
+    body3=RichTextField(blank=True, null=True)
+    cloudinaryimg3= CloudinaryField('image',blank=True)
+    body4=RichTextField(blank=True, null=True)
+    cloudinaryimg4= CloudinaryField('image',blank=True)
+    body5=RichTextField(blank=True, null=True)
+    cloudinaryimg5= CloudinaryField('image',blank=True)
+    created=models.DateField(auto_now_add=True)
+    updated=models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name='postSection'
+        verbose_name_plural='postSections'
+        
+    def __str__(self):
+        return '%s - %s - %s' % ( self.relatedPost,self.pk,self.title )    
     
 class CloudinaryMedia(models.Model):
     name=models.CharField(max_length=50,unique=True)
+    body=RichTextField(blank=True, null=True)
     name2=models.ManyToManyField(Subcategoria)
     created=models.DateField(auto_now_add=True)
     updated=models.DateField(auto_now_add=True)
@@ -76,15 +146,6 @@ class CloudinaryMedia(models.Model):
 
 
 
-class CloudinaryFile(models.Model):
-    name=models.CharField(auto_created=True, max_length=50,unique=True)
-    cloudinaryfile= CloudinaryField('Imagen',blank=True)
-    created=models.DateField(auto_now_add=True)
-    updated=models.DateField(auto_now_add=True)
-        
-    class Meta:
-        verbose_name='cloudinaryfile'
-        verbose_name_plural='cloudinaryfiles'
-    
-    def __str__(self):
-        return self.name
+
+
+

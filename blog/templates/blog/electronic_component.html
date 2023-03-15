@@ -1,0 +1,88 @@
+{% extends 'djangoWebApp/base.html' %}
+
+
+{% load static %}
+
+{% block content %}
+
+
+<style>
+    body:before {
+        background-image: url('{% static "images/bg.jpg"%}');
+    }
+</style>
+
+<section>
+
+    <div id="heading">
+        <h1>Componentes Electrónicos</h1>
+    </div>
+    <!-- Highlights -->
+
+
+    <section class="main wrapper">
+        <div class="inner">
+            <div class="content categories-content">
+                <div class="categories-posts">
+                    <ul class="posts">
+
+                        {% for electronic_component in electronic_components %}
+
+
+
+                        <li>
+                            <a class="post shadow-on-hover">
+                                <header>
+                                    <span class="label">
+                                        {% if electronic_component.cloudinaryimg %}
+                                        <img src="{{ electronic_component.cloudinaryimg.url }}"
+                                            alt="{{electronic_component.deviceName}}" class="post_image">
+
+                                        {% endif %}
+                                    </span>
+                                    <h3>{{electronic_component.deviceName}}</h3>
+                                </header>
+                                <p>
+                                    {% for deviceCategory in electronic_component.deviceCategories.all%}
+
+
+
+                                    <span class="badge badge-success">{{deviceCategory.deviceCategoryName}}</span>
+                                    {% endfor %} </p>
+
+                                <p> {{electronic_component.deviceDescription}}</p>
+
+                            </a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="categories-menu">
+                    <header class="special">
+                        <h2> Categorías </h2>
+                    </header>
+                    <div class="categories">
+                        {% for deviceCategory in deviceCategories.all %}
+
+              
+                        
+                            <a href="{% url 'componentCategory' deviceCategory.id %}"><button
+                                    class='category category-button four shadow-on-hover'>
+                                    <div class='icon'>&#x27A4;</div>
+                                    <span>
+
+                                        {{deviceCategory.deviceCategoryName}}
+                                    </span>
+                                </button></a>
+                        
+                        {% endfor %}
+
+                    
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                       
+{% endblock %}

@@ -14,7 +14,8 @@ urlpatterns = [
     path('subcategoria/<int:subcategoria_id>', views.subcategoria, name="subcategoria"),   
     path('post/<int:post_id>', views.post, name="post"), 
     path('galeria', views.galeriaCloudinary, name="galeria"),
-    
+    path('electronic_component', views.electronic_component, name="electronic_component"),
+    path('componentCategory/<int:componentCategory_id>', views.componentCategory, name="componentCategory"), 
       
 ]
 

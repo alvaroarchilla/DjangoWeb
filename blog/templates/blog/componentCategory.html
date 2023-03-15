@@ -1,0 +1,75 @@
+{% extends 'djangoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+<div id="heading">
+  <h1>Categoría: {{componentCategory.deviceCategoryName}}</h1>
+</div>
+
+
+
+<section class="main wrapper">
+  <div class="inner">
+    <div class="content">
+
+      <ul class="posts">
+        {% for electronicComponent in electronicComponents %}
+        <li>
+          <a class="post shadow-on-hover">
+            <header>
+              <span class="label">
+                {% if electronicComponent.cloudinaryimg %}
+                <img src="{{ electronicComponent.cloudinaryimg.url }}" alt="{{electronicComponent.name}}"
+                  class="post_image">
+
+                {% endif %}
+              </span>
+              <h3>{{electronicComponent.deviceName}}</h3>
+            </header>
+
+            <p>
+              {% for deviceCategory in electronicComponent.deviceCategories.all%}
+
+
+
+              <p class="badge badge-success">{{deviceCategory.deviceCategoryName}}</p>
+              {% endfor %} </p>
+              <p> {{electronicComponent.deviceDescription}}</p>
+            <p> {% if electronicComponent.workingVoltage %}
+
+
+
+              <span class="label label-warning">Voltaje: {{electronicComponent.workingVoltage}} V - </span>
+              {% endif %} 
+             {% if electronicComponent.workingCurrent %}
+
+
+
+              <span class="label label-danger">Intensidad: {{electronicComponent.workingCurrent}} mA</span>
+              {% endif %} </p>
+
+   
+
+          </a>
+
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

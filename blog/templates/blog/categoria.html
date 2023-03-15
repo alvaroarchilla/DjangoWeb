@@ -16,7 +16,9 @@
 <section class="main wrapper">
   <div class="inner">
     <div class="content">
-
+      {% if categoria.name == "Electrónica" %}
+      <a href="{% url 'electronic_component'  %}"><button class='category ' >Componentes Electrónicos </button></a>
+{% endif %}
       <header class="special">
         <h2>
           Todos los tutoriales sobre {{categoria.name}}:

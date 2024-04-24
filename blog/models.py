@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from ckeditor.fields import	RichTextField
 from cloudinary.models import CloudinaryField
 from django.db.models import query
-
+from django.utils.html import format_html
 #from blog.admin import PostSectionAdmin
 
 
@@ -97,24 +97,38 @@ class Post(models.Model):
 
         return self.categorias
     
+    def post_image(self):
+        if self.cloudinaryimg:
+            return format_html('<img src="{}" style="max-width:200px; max-height:200px"/>'.format(self.cloudinaryimg.url))
+    
     def __str__(self):
         return self.title
-       
+ 
+class PostSectionElement(models.Model):   
+    body=RichTextField(blank=True, null=True)
+    cloudinaryimg= CloudinaryField('image',blank=True, null=True)   
+    created=models.DateField(auto_now_add=True)
+    updated=models.DateField(auto_now_add=True)
+   # postSection=models.ForeignKey(PostSection, on_delete=models.CASCADE ,blank=True)
+    class Meta:
+        verbose_name='postSectionElement'
+        verbose_name_plural='postSectionElements'
+    
+    def image_tag(self):
+        if self.cloudinaryimg:
+            return format_html('<img src="{}" style="max-width:200px; max-height:200px"/>'.format(self.cloudinaryimg.url))
+            
+    def __str__(self):
+        return '%s - %s ' % ( self.pk,self.created )   
+
+
 
 class PostSection(models.Model):
     relatedPost=models.ForeignKey(Post,  null=True, on_delete=models.CASCADE)
     sectionTitle=models.CharField(max_length=50, blank=True, null=True)
     title=models.CharField(max_length=50)
-    body1=RichTextField(blank=True, null=True)
-    cloudinaryimg1= CloudinaryField('image',blank=True)
-    body2=RichTextField(blank=True, null=True)
-    cloudinaryimg2= CloudinaryField('image',blank=True)
-    body3=RichTextField(blank=True, null=True)
-    cloudinaryimg3= CloudinaryField('image',blank=True)
-    body4=RichTextField(blank=True, null=True)
-    cloudinaryimg4= CloudinaryField('image',blank=True)
-    body5=RichTextField(blank=True, null=True)
-    cloudinaryimg5= CloudinaryField('image',blank=True)
+    postSectionElements=models.ManyToManyField(PostSectionElement ,blank=True,  related_name="PostSectionElement")
+
     created=models.DateField(auto_now_add=True)
     updated=models.DateField(auto_now_add=True)
 
@@ -123,7 +137,10 @@ class PostSection(models.Model):
         verbose_name_plural='postSections'
         
     def __str__(self):
-        return '%s - %s - %s' % ( self.relatedPost,self.pk,self.title )    
+        return 'Post:%s - %s - Section Title:%s' % ( self.relatedPost,self.pk,self.sectionTitle )    
+    
+    def related_postSection(self):
+        return self.postSectionElements
     
 class CloudinaryMedia(models.Model):
     name=models.CharField(max_length=50,unique=True)

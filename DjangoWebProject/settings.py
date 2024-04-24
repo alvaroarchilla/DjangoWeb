@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import cloudinary
-import cloudinary_storage
+#import cloudinary_storage
 import cloudinary.uploader
 import cloudinary.api
 
@@ -35,7 +35,7 @@ DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 
 
-ALLOWED_HOSTS = ['alvaroarchillatutoriales.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['kurio7.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition

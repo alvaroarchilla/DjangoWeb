@@ -20,46 +20,21 @@
         <div class="content">
             <div class="wrapper post-body">
                 {% for postSection in postSections %}
-                {% if postSection.sectionTitle %}
-                <h2>{{postSection.sectionTitle}}</h2>
-                {% endif %}
-                <div> {{postSection.body1 | safe}}</div>
-                {% if postSection.cloudinaryimg1 %}
-                <img src="{{ postSection.cloudinaryimg1.url }}" alt="{{postSection.title}}"
-                    style="width:800px;height:600px;">
-                {% endif %}
-                {% if postSection.body2 %}
-                <div> {{postSection.body2 | safe}}</div>
-                {% endif %}
+                    {% if postSection.sectionTitle %}
+                    <h2>{{postSection.sectionTitle}}</h2>
+                    {% endif %}
+              
 
-                {% if postSection.cloudinaryimg2 %}
-                <img src="{{ postSection.cloudinaryimg2.url }}" alt="{{postSection.title}}"
-                    style="width:800px;height:600px;">
-                {% endif %}
-                {% if postSection.body3 %}
-                <div> {{postSection.body3 | safe}}</div>
-                {% endif %}
-
-                {% if postSection.cloudinaryimg3 %}
-                <img src="{{ postSection.cloudinaryimg3.url }}" alt="{{postSection.title}}"
-                    style="width:800px;height:600px;">
-                {% endif %}
-                {% if postSection.body4 %}
-                <div> {{postSection.body4 | safe}}</div>
-                {% endif %}
-                {% if postSection.cloudinaryimg4 %}
-                <img src="{{ postSection.cloudinaryimg4.url }}" alt="{{postSection.title}}"
-                    style="width:800px;height:600px;">
-                {% endif %}
-                {% if postSection.body5 %}
-                <div> {{postSection.body5 | safe}}</div>
-                {% endif %}
-                {% if postSection.cloudinaryimg5 %}
-                <img src="{{ postSection.cloudinaryimg5.url }}" alt="{{postSection.title}}"
-                    style="width:800px;height:600px;">
-                {% endif %}
+                            {% for postSectionElement in postSection.postSectionElements.all %}
+                                <p>{{postSectionElement.body | safe}}</p>
+                                {% if postSectionElement.cloudinaryimg %}
+                                <img src="{{ postSectionElement.cloudinaryimg.url }}" alt="{{postSection.title}}"
+                                    style="max-width:100%;height:auto;">
+                                {% endif %}
+                            {% endfor %}
+             
                 {% endfor %}
-
+                
             </div>
 
 

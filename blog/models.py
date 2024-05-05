@@ -125,8 +125,8 @@ class PostSectionElement(models.Model):
 
 class PostSection(models.Model):
     relatedPost=models.ForeignKey(Post,  null=True, on_delete=models.CASCADE)
-    sectionTitle=models.CharField(max_length=50, blank=True, null=True)
-    title=models.CharField(max_length=50)
+    sectionTitle=models.CharField(max_length=150, blank=True, null=True)
+    title=models.CharField(max_length=150)
     postSectionElements=models.ManyToManyField(PostSectionElement ,blank=True,  related_name="PostSectionElement")
 
     created=models.DateField(auto_now_add=True)

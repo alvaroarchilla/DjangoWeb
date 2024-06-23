@@ -14,8 +14,6 @@ from pathlib import Path
 import os
 import cloudinary
 #import cloudinary_storage
-import cloudinary.uploader
-import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -175,3 +173,6 @@ cloudinary.config(
 
 )
 CLOUDINARY_URL="cloudinary://717419696444424:ekuubNhpYuwY_bmbloHQ3_a_YUI@dpc0ldfnt"
+# Estos imports tienen que estar aquí, si están antes de la llamada a config no funsiona >:(
+import cloudinary.uploader
+import cloudinary.api

@@ -169,7 +169,7 @@ cloudinary.config(
     api_key= "717419696444424",
     api_secret="ekuubNhpYuwY_bmbloHQ3_a_YUI",
     #Tiene q estar desabilitada para que funcione en local y recordar la coma
-    api_proxy= "https://proxy.server:3128"
+    api_proxy= "http://proxy.server:3128"
 
 )
 CLOUDINARY_URL="cloudinary://717419696444424:ekuubNhpYuwY_bmbloHQ3_a_YUI@dpc0ldfnt"
